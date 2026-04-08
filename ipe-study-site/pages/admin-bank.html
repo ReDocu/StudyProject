@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>관리자 - 문제은행 작성</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="adminBank">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-badge">IP</div><div><h1>정보처리기사 학습</h1><p>로컬 JSON 기반 학습 웹앱</p></div></div>
+      <div class="top-actions" style="margin-bottom:18px;"><button class="btn primary" id="themeToggle">테마 전환</button></div>
+      <nav class="nav-group">
+        <a class="nav-item" data-nav="dashboard" href="../index.html">대시보드</a>
+        <a class="nav-item" data-nav="written" href="../pages/written.html">정보처리기사 필기</a>
+        <a class="nav-item" data-nav="practical" href="../pages/practical.html">정보처리기사 실기</a>
+        <a class="nav-item" data-nav="sql" href="../pages/sql.html">SQL 문제</a>
+        <a class="nav-item" data-nav="coding" href="../pages/coding.html">코딩 문제</a>
+        <a class="nav-item" data-nav="bank" href="../pages/bank.html">문제은행</a>
+        <a class="nav-item" data-nav="settings" href="../pages/settings.html">설정페이지</a>
+        <a class="nav-item" data-nav="adminWritten" href="../pages/admin-written.html">관리자 - 필기/실기 작성</a>
+        <a class="nav-item" data-nav="adminProblems" href="../pages/admin-problems.html">관리자 - 문제 작성</a>
+        <a class="nav-item" data-nav="adminBank" href="../pages/admin-bank.html">관리자 - 문제은행 작성</a>
+        <a class="nav-item" data-nav="adminData" href="../pages/admin-data.html">관리자 - 전체 데이터</a>
+      </nav>
+      <p class="footer-note">실사용 시 관리자 메뉴는 삭제하거나 숨기면 됩니다.</p>
+    </aside>
+    <main class="main">
+      <header class="page-header">
+        <div><h2>관리자 페이지 - 문제은행 작성</h2><p>통합 문제은행 문제를 분류와 함께 저장하고 검수합니다.</p></div>
+        
+      </header>
+      <section class="split-2"><section class="card"><h3>문제은행 항목 추가</h3><form id="adminBankForm" class="form-grid"><div class="form-group"><label>분류</label><select name="type"><option>필기</option><option>실기</option><option>SQL</option><option>언어</option></select></div><div class="form-group"><label>문제</label><textarea name="question" required></textarea></div><div class="form-group"><label>답안</label><input name="answer" required /></div><div class="form-group"><label>설명</label><textarea name="explanation" required></textarea></div><button class="btn primary" type="submit">저장</button></form></section><section><h3>저장된 문제은행</h3><div class="card-grid" id="adminBankList"></div></section></section>
+    </main>
+  </div>
+  <script src="../js/data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
